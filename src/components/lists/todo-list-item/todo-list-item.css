@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.todo-list-item {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  /* font-size: 24px; */
+}
+
+.todo-list-item::before {
+  content: "";
+  position: absolute;
+  background: #757d88;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-50%);
+}

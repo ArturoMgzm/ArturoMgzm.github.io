@@ -6,6 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ExampleButton {
+        "loading": boolean;
+        "name": string;
+        "variant": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -20,19 +25,51 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TodoList {
+        "name": string;
+    }
+    interface TodoListItem {
+        "thingToDo": string;
+    }
 }
 declare global {
+    interface HTMLExampleButtonElement extends Components.ExampleButton, HTMLStencilElement {
+    }
+    var HTMLExampleButtonElement: {
+        prototype: HTMLExampleButtonElement;
+        new (): HTMLExampleButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTodoListElement extends Components.TodoList, HTMLStencilElement {
+    }
+    var HTMLTodoListElement: {
+        prototype: HTMLTodoListElement;
+        new (): HTMLTodoListElement;
+    };
+    interface HTMLTodoListItemElement extends Components.TodoListItem, HTMLStencilElement {
+    }
+    var HTMLTodoListItemElement: {
+        prototype: HTMLTodoListItemElement;
+        new (): HTMLTodoListItemElement;
+    };
     interface HTMLElementTagNameMap {
+        "example-button": HTMLExampleButtonElement;
         "my-component": HTMLMyComponentElement;
+        "todo-list": HTMLTodoListElement;
+        "todo-list-item": HTMLTodoListItemElement;
     }
 }
 declare namespace LocalJSX {
+    interface ExampleButton {
+        "loading"?: boolean;
+        "name"?: string;
+        "variant"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -47,15 +84,27 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TodoList {
+        "name"?: string;
+    }
+    interface TodoListItem {
+        "thingToDo"?: string;
+    }
     interface IntrinsicElements {
+        "example-button": ExampleButton;
         "my-component": MyComponent;
+        "todo-list": TodoList;
+        "todo-list-item": TodoListItem;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "example-button": LocalJSX.ExampleButton & JSXBase.HTMLAttributes<HTMLExampleButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "todo-list": LocalJSX.TodoList & JSXBase.HTMLAttributes<HTMLTodoListElement>;
+            "todo-list-item": LocalJSX.TodoListItem & JSXBase.HTMLAttributes<HTMLTodoListItemElement>;
         }
     }
 }
