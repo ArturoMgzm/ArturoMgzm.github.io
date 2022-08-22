@@ -1,5 +1,5 @@
 {
-  "source": ["tokens/**/*.json"],
+  "source": ["ds-token-input/design-tokens.json"],
   "platforms": {
     "scss": {
       "transformGroup": "scss",
