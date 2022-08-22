@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.button-example {
+  display: block;
+  padding: 8px 24px;
+  background-color: #4e04af;
+  border: 1px solid #4e04af;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}

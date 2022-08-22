@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ButtonExample {
+        "loading": boolean;
+        "name": string;
+    }
     interface ExampleButton {
         "loading": boolean;
         "name": string;
@@ -25,6 +29,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TailwindComponent {
+    }
     interface TodoList {
         "name": string;
     }
@@ -33,6 +39,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLButtonExampleElement extends Components.ButtonExample, HTMLStencilElement {
+    }
+    var HTMLButtonExampleElement: {
+        prototype: HTMLButtonExampleElement;
+        new (): HTMLButtonExampleElement;
+    };
     interface HTMLExampleButtonElement extends Components.ExampleButton, HTMLStencilElement {
     }
     var HTMLExampleButtonElement: {
@@ -44,6 +56,12 @@ declare global {
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
+    };
+    interface HTMLTailwindComponentElement extends Components.TailwindComponent, HTMLStencilElement {
+    }
+    var HTMLTailwindComponentElement: {
+        prototype: HTMLTailwindComponentElement;
+        new (): HTMLTailwindComponentElement;
     };
     interface HTMLTodoListElement extends Components.TodoList, HTMLStencilElement {
     }
@@ -58,13 +76,19 @@ declare global {
         new (): HTMLTodoListItemElement;
     };
     interface HTMLElementTagNameMap {
+        "button-example": HTMLButtonExampleElement;
         "example-button": HTMLExampleButtonElement;
         "my-component": HTMLMyComponentElement;
+        "tailwind-component": HTMLTailwindComponentElement;
         "todo-list": HTMLTodoListElement;
         "todo-list-item": HTMLTodoListItemElement;
     }
 }
 declare namespace LocalJSX {
+    interface ButtonExample {
+        "loading"?: boolean;
+        "name"?: string;
+    }
     interface ExampleButton {
         "loading"?: boolean;
         "name"?: string;
@@ -84,6 +108,8 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TailwindComponent {
+    }
     interface TodoList {
         "name"?: string;
     }
@@ -91,8 +117,10 @@ declare namespace LocalJSX {
         "thingToDo"?: string;
     }
     interface IntrinsicElements {
+        "button-example": ButtonExample;
         "example-button": ExampleButton;
         "my-component": MyComponent;
+        "tailwind-component": TailwindComponent;
         "todo-list": TodoList;
         "todo-list-item": TodoListItem;
     }
@@ -101,8 +129,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "button-example": LocalJSX.ButtonExample & JSXBase.HTMLAttributes<HTMLButtonExampleElement>;
             "example-button": LocalJSX.ExampleButton & JSXBase.HTMLAttributes<HTMLExampleButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "tailwind-component": LocalJSX.TailwindComponent & JSXBase.HTMLAttributes<HTMLTailwindComponentElement>;
             "todo-list": LocalJSX.TodoList & JSXBase.HTMLAttributes<HTMLTodoListElement>;
             "todo-list-item": LocalJSX.TodoListItem & JSXBase.HTMLAttributes<HTMLTodoListItemElement>;
         }

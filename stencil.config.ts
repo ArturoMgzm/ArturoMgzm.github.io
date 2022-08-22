@@ -1,7 +1,9 @@
 import { Config } from '@stencil/core';
+import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
 
 export const config: Config = {
   namespace: 'stenciljs-test',
+  // globalStyle: 'www/tailwind.css',
   outputTargets: [
     {
       type: 'dist',
@@ -17,5 +19,9 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+  ],
+  plugins: [
+    tailwind(),
+    tailwindHMR(),
   ],
 };
