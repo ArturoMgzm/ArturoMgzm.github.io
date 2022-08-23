@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'stenciljs-test',
@@ -23,5 +24,11 @@ export const config: Config = {
   plugins: [
     tailwind(),
     tailwindHMR(),
+    sass({
+      injectGlobalPaths: [
+        'assets/scss/variables.scss',
+        // 'assets/scss/mixins.scss'
+      ]
+    })
   ],
 };
