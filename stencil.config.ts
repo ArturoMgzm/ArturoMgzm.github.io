@@ -24,11 +24,11 @@ export const config: Config = {
   plugins: [
     tailwind(),
     tailwindHMR(),
-    sass({
-      injectGlobalPaths: [
-        'assets/scss/variables.scss',
-        // 'assets/scss/mixins.scss'
-      ]
-    })
+    sass(
+      {
+        injectGlobalPaths: ["assets/scss/variables.scss", "assets/global/scss/index.scss"]
+    }
+    )
+
   ],
 };

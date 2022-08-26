@@ -15,6 +15,12 @@ export namespace Components {
         "name": string;
         "variant": string;
     }
+    interface FormInput {
+        "placeholder": string;
+        "type": string;
+    }
+    interface FormLabel {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -51,6 +57,18 @@ declare global {
         prototype: HTMLExampleButtonElement;
         new (): HTMLExampleButtonElement;
     };
+    interface HTMLFormInputElement extends Components.FormInput, HTMLStencilElement {
+    }
+    var HTMLFormInputElement: {
+        prototype: HTMLFormInputElement;
+        new (): HTMLFormInputElement;
+    };
+    interface HTMLFormLabelElement extends Components.FormLabel, HTMLStencilElement {
+    }
+    var HTMLFormLabelElement: {
+        prototype: HTMLFormLabelElement;
+        new (): HTMLFormLabelElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -78,6 +96,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "button-example": HTMLButtonExampleElement;
         "example-button": HTMLExampleButtonElement;
+        "form-input": HTMLFormInputElement;
+        "form-label": HTMLFormLabelElement;
         "my-component": HTMLMyComponentElement;
         "tailwind-component": HTMLTailwindComponentElement;
         "todo-list": HTMLTodoListElement;
@@ -93,6 +113,12 @@ declare namespace LocalJSX {
         "loading"?: boolean;
         "name"?: string;
         "variant"?: string;
+    }
+    interface FormInput {
+        "placeholder"?: string;
+        "type"?: string;
+    }
+    interface FormLabel {
     }
     interface MyComponent {
         /**
@@ -119,6 +145,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "button-example": ButtonExample;
         "example-button": ExampleButton;
+        "form-input": FormInput;
+        "form-label": FormLabel;
         "my-component": MyComponent;
         "tailwind-component": TailwindComponent;
         "todo-list": TodoList;
@@ -131,6 +159,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "button-example": LocalJSX.ButtonExample & JSXBase.HTMLAttributes<HTMLButtonExampleElement>;
             "example-button": LocalJSX.ExampleButton & JSXBase.HTMLAttributes<HTMLExampleButtonElement>;
+            "form-input": LocalJSX.FormInput & JSXBase.HTMLAttributes<HTMLFormInputElement>;
+            "form-label": LocalJSX.FormLabel & JSXBase.HTMLAttributes<HTMLFormLabelElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "tailwind-component": LocalJSX.TailwindComponent & JSXBase.HTMLAttributes<HTMLTailwindComponentElement>;
             "todo-list": LocalJSX.TodoList & JSXBase.HTMLAttributes<HTMLTodoListElement>;
