@@ -5,11 +5,14 @@
 .button-example {
   display: block;
   padding: 8px 24px;
-  background-color: #4e04af;
+  /*background-color: #4e04af;*/
+  background: linear-gradient(90deg, #4E04AF 0%, rgba(79, 1, 176, 0.8) 100%);
   border: 1px solid #4e04af;
   border-radius: 0.25rem;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 1.5rem;
+  font-family: "poppins";
+  width: 100%;
 }

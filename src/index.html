@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <!-- <link rel="stylesheet" href="build/stencil-tailwind.css" /> -->
     <title>Stencil Component Starter</title>
-
+    <style type="text/css" media="screen, print">
+      @font-face {
+        font-family: "Poppins";
+        src: url("../assets/poppins/Poppins-Regular.otf") format("opentype");
+      }
+      @media only screen and (max-width: 800px) {
+          div.dashboard {
+              display: none !important;
+          }
+      }
+      @media only screen and (max-height: 500px) {
+          div.dashboard {
+              display: none !important;
+          }
+      }
+    </style>
     <script type="module" src="/build/stenciljs-test.esm.js"></script>
     <script nomodule src="/build/stenciljs-test.js"></script>
   </head>
@@ -19,8 +34,37 @@
     <example-button name="Button Loading" loading="true"></example-button>
 
     <todo-list name="Tuesday's To-Do List"></todo-list> -->
-    
+    <!--
     <form-label>Label</form-label>
     <form-input type="text" placeholder="Placeholder..."></form-input>
+    -->
+    <div style="width: 34%;height: 100vh; background: white; min-width: 400px; display: flex; float: left; flex-direction: column;">
+      <my-logo style="position: relative; left: 13%; top: 8%;"></my-logo>
+      <container style="position:relative; left:13%; top:27%; width: 74%; height:min-content ;">
+        <div style="height: 68px; display: flex; flex-direction: column;">
+          <label style="width: 91px; height: 48px;font-family: 'Poppins';font-style: normal;font-weight: 600;font-size: 32px;line-height: 48px;letter-spacing: -0.02em;color: #333366;flex: none;order: 0;flex-grow: 0;">Log In</label>
+          <label style="width: 323px; height: 21px; font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 14px; line-height: 21px; color: #757D88; flex: none; order: 1; flex-grow: 0;">Enter your credentials to access your account</label>
+        </div>
+        <div style="position:relative; top:48px;height: 77px; width: 100%;display: flex; flex-direction: column;">
+          <form-label style="width: 101px;">Email Address</form-label>
+          <form-input type="text" placeholder="Enter your email address" style="width:100%;"></form-input>
+        </div>
+        <div style="position:relative; top:72px; height: 77px; width: 100%;display: flex; flex-direction: column;">
+          <container style="display: flex; flex-direction: row;">
+            <form-label style="width: 101px;">Password</form-label>
+            <a style="margin-left: auto;font-family: 'Poppins'; font-style: normal;font-weight: 400;font-size: 14px;line-height: 21px; color: #4E04AF;">Forgot password?</a>
+          </container>
+          <container>
+            <form-input type="Password" placeholder="Enter your Password" style="width:100%"></form-input>
+          </container>
+        </div>
+        <button-example name="Log In" style="position: relative; top: 96px; width: 100%;"></button-example>
+      </container>
+    </div>
+    <div class="dashboard" style="display: flex;height: 100vh; background: #4E04AF; float: none; overflow: hidden;">
+      <container style="margin-left: auto; margin-right: auto;">
+        <my-dashboard></my-dashboard>
+      </container>
+    </div>
   </body>
 </html>

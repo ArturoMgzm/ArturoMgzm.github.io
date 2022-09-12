@@ -35,6 +35,12 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyDashboard {
+        "image": string;
+    }
+    interface MyLogo {
+        "image": string;
+    }
     interface TailwindComponent {
     }
     interface TodoList {
@@ -75,6 +81,18 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLMyDashboardElement extends Components.MyDashboard, HTMLStencilElement {
+    }
+    var HTMLMyDashboardElement: {
+        prototype: HTMLMyDashboardElement;
+        new (): HTMLMyDashboardElement;
+    };
+    interface HTMLMyLogoElement extends Components.MyLogo, HTMLStencilElement {
+    }
+    var HTMLMyLogoElement: {
+        prototype: HTMLMyLogoElement;
+        new (): HTMLMyLogoElement;
+    };
     interface HTMLTailwindComponentElement extends Components.TailwindComponent, HTMLStencilElement {
     }
     var HTMLTailwindComponentElement: {
@@ -99,6 +117,8 @@ declare global {
         "form-input": HTMLFormInputElement;
         "form-label": HTMLFormLabelElement;
         "my-component": HTMLMyComponentElement;
+        "my-dashboard": HTMLMyDashboardElement;
+        "my-logo": HTMLMyLogoElement;
         "tailwind-component": HTMLTailwindComponentElement;
         "todo-list": HTMLTodoListElement;
         "todo-list-item": HTMLTodoListItemElement;
@@ -134,6 +154,12 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyDashboard {
+        "image"?: string;
+    }
+    interface MyLogo {
+        "image"?: string;
+    }
     interface TailwindComponent {
     }
     interface TodoList {
@@ -148,6 +174,8 @@ declare namespace LocalJSX {
         "form-input": FormInput;
         "form-label": FormLabel;
         "my-component": MyComponent;
+        "my-dashboard": MyDashboard;
+        "my-logo": MyLogo;
         "tailwind-component": TailwindComponent;
         "todo-list": TodoList;
         "todo-list-item": TodoListItem;
@@ -162,6 +190,8 @@ declare module "@stencil/core" {
             "form-input": LocalJSX.FormInput & JSXBase.HTMLAttributes<HTMLFormInputElement>;
             "form-label": LocalJSX.FormLabel & JSXBase.HTMLAttributes<HTMLFormLabelElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-dashboard": LocalJSX.MyDashboard & JSXBase.HTMLAttributes<HTMLMyDashboardElement>;
+            "my-logo": LocalJSX.MyLogo & JSXBase.HTMLAttributes<HTMLMyLogoElement>;
             "tailwind-component": LocalJSX.TailwindComponent & JSXBase.HTMLAttributes<HTMLTailwindComponentElement>;
             "todo-list": LocalJSX.TodoList & JSXBase.HTMLAttributes<HTMLTodoListElement>;
             "todo-list-item": LocalJSX.TodoListItem & JSXBase.HTMLAttributes<HTMLTodoListItemElement>;

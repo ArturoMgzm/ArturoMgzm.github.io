@@ -27,7 +27,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0",
+    "@stencil/core": "^2.17.4",
     "@stencil/sass": "^1.5.2",
     "stencil-tailwind-plugin": "^1.3.0",
     "style-dictionary": "^3.7.1",
