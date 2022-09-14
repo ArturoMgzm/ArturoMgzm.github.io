@@ -2,7 +2,7 @@ import { Component, Prop, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'button-example',
-  styleUrl: 'button-example.css',
+  styleUrl: 'button-example.scss',
   shadow: true,
 })
 export class ButtonExample {

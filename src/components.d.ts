@@ -10,6 +10,13 @@ export namespace Components {
         "loading": boolean;
         "name": string;
     }
+    interface CustomLabel {
+        "type": string;
+    }
+    interface CustomLink {
+    }
+    interface DashboardBackground {
+    }
     interface ExampleButton {
         "loading": boolean;
         "name": string;
@@ -56,6 +63,24 @@ declare global {
     var HTMLButtonExampleElement: {
         prototype: HTMLButtonExampleElement;
         new (): HTMLButtonExampleElement;
+    };
+    interface HTMLCustomLabelElement extends Components.CustomLabel, HTMLStencilElement {
+    }
+    var HTMLCustomLabelElement: {
+        prototype: HTMLCustomLabelElement;
+        new (): HTMLCustomLabelElement;
+    };
+    interface HTMLCustomLinkElement extends Components.CustomLink, HTMLStencilElement {
+    }
+    var HTMLCustomLinkElement: {
+        prototype: HTMLCustomLinkElement;
+        new (): HTMLCustomLinkElement;
+    };
+    interface HTMLDashboardBackgroundElement extends Components.DashboardBackground, HTMLStencilElement {
+    }
+    var HTMLDashboardBackgroundElement: {
+        prototype: HTMLDashboardBackgroundElement;
+        new (): HTMLDashboardBackgroundElement;
     };
     interface HTMLExampleButtonElement extends Components.ExampleButton, HTMLStencilElement {
     }
@@ -113,6 +138,9 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "button-example": HTMLButtonExampleElement;
+        "custom-label": HTMLCustomLabelElement;
+        "custom-link": HTMLCustomLinkElement;
+        "dashboard-background": HTMLDashboardBackgroundElement;
         "example-button": HTMLExampleButtonElement;
         "form-input": HTMLFormInputElement;
         "form-label": HTMLFormLabelElement;
@@ -128,6 +156,13 @@ declare namespace LocalJSX {
     interface ButtonExample {
         "loading"?: boolean;
         "name"?: string;
+    }
+    interface CustomLabel {
+        "type"?: string;
+    }
+    interface CustomLink {
+    }
+    interface DashboardBackground {
     }
     interface ExampleButton {
         "loading"?: boolean;
@@ -170,6 +205,9 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "button-example": ButtonExample;
+        "custom-label": CustomLabel;
+        "custom-link": CustomLink;
+        "dashboard-background": DashboardBackground;
         "example-button": ExampleButton;
         "form-input": FormInput;
         "form-label": FormLabel;
@@ -186,6 +224,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "button-example": LocalJSX.ButtonExample & JSXBase.HTMLAttributes<HTMLButtonExampleElement>;
+            "custom-label": LocalJSX.CustomLabel & JSXBase.HTMLAttributes<HTMLCustomLabelElement>;
+            "custom-link": LocalJSX.CustomLink & JSXBase.HTMLAttributes<HTMLCustomLinkElement>;
+            "dashboard-background": LocalJSX.DashboardBackground & JSXBase.HTMLAttributes<HTMLDashboardBackgroundElement>;
             "example-button": LocalJSX.ExampleButton & JSXBase.HTMLAttributes<HTMLExampleButtonElement>;
             "form-input": LocalJSX.FormInput & JSXBase.HTMLAttributes<HTMLFormInputElement>;
             "form-label": LocalJSX.FormLabel & JSXBase.HTMLAttributes<HTMLFormLabelElement>;

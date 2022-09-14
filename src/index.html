@@ -11,12 +11,12 @@
         src: url("../assets/poppins/Poppins-Regular.otf") format("opentype");
       }
       @media only screen and (max-width: 800px) {
-          div.dashboard {
+          dashboard-background.dashboard {
               display: none !important;
           }
       }
       @media only screen and (max-height: 500px) {
-          div.dashboard {
+          dashboard-background.dashboard {
               display: none !important;
           }
       }
@@ -42,8 +42,8 @@
       <my-logo style="position: relative; left: 13%; top: 8%;"></my-logo>
       <container style="position:relative; left:13%; top:27%; width: 74%; height:min-content ;">
         <div style="height: 68px; display: flex; flex-direction: column;">
-          <label style="width: 91px; height: 48px;font-family: 'Poppins';font-style: normal;font-weight: 600;font-size: 32px;line-height: 48px;letter-spacing: -0.02em;color: #333366;flex: none;order: 0;flex-grow: 0;">Log In</label>
-          <label style="width: 323px; height: 21px; font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 14px; line-height: 21px; color: #757D88; flex: none; order: 1; flex-grow: 0;">Enter your credentials to access your account</label>
+          <custom-label type="header" style="width: 91px; height: 48px; flex: none;order: 0; flex-grow: 0;">Log In</custom-label>
+          <custom-label type="basic" style="width: 323px; height: 21px; flex: none; order: 1; flex-grow: 0;">Enter your credentials to access your account</custom-label>
         </div>
         <div style="position:relative; top:48px;height: 77px; width: 100%;display: flex; flex-direction: column;">
           <form-label style="width: 101px;">Email Address</form-label>
@@ -52,7 +52,7 @@
         <div style="position:relative; top:72px; height: 77px; width: 100%;display: flex; flex-direction: column;">
           <container style="display: flex; flex-direction: row;">
             <form-label style="width: 101px;">Password</form-label>
-            <a style="margin-left: auto;font-family: 'Poppins'; font-style: normal;font-weight: 400;font-size: 14px;line-height: 21px; color: #4E04AF;">Forgot password?</a>
+            <custom-link style="margin-left: auto;">Forgot password?</custom-link>
           </container>
           <container>
             <form-input type="Password" placeholder="Enter your Password" style="width:100%"></form-input>
@@ -61,10 +61,8 @@
         <button-example name="Log In" style="position: relative; top: 96px; width: 100%;"></button-example>
       </container>
     </div>
-    <div class="dashboard" style="display: flex;height: 100vh; background: #4E04AF; float: none; overflow: hidden;">
-      <container style="margin-left: auto; margin-right: auto;">
-        <my-dashboard></my-dashboard>
-      </container>
-    </div>
+    <dashboard-background class="dashboard" style="display: flex; height: 100vh; float: none; overflow: hidden;">
+      <my-dashboard style="position:relative; top:50%; transform: translateY(-50%); display: block; height:fit-content; width: fit-content; margin:auto;"></my-dashboard>
+    </dashboard-background>
   </body>
 </html>
