@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+.todo-list {
+  position: relative;
+  list-style-type: none;
+  padding-left: 0;
+}

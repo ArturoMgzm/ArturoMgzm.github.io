@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.form-input {
+  padding: 10px 16px;
+  border: 1px solid $global-color-light-gray-100;
+  border-radius: 4px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-size: 14px;
+  width: 100%;
+
+  &::placeholder {
+    color: $global-color-gray-100;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: $global-color-secondary-100;
+  }
+}

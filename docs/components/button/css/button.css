@@ -1,0 +1,38 @@
+.example-button {
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4e04af;
+    border: 1px solid #4e04af;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: #ff0808;
+    border-color: #ff0808;
+}
+
+.example-button.loading {
+    display: inline-flex;
+    align-items: center;
+}
+
+@keyframes spinner-border {
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.btn-loading {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    border: 0.25em solid;
+    border-right: 0.25em solid transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+}
